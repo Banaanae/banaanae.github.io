@@ -1,6 +1,7 @@
 let random = document.getElementById('random')
 let marrace = document.getElementById('marquee')
 let start = document.getElementById('start')
+let i = 0
 
 function updateDirection() {
     let int = Math.floor(Math.random() * 4);
@@ -22,9 +23,18 @@ function createBtn() {
     nextButton.innerText = 'One Click = One Marquee Saved';
     var newMarquee = document.createElement('marquee');
     newMarquee.behavior = 'scroll';
-    newMarquee.direction = 'left';
+    newMarquee.direction = direction();
     nextButton.addEventListener('click', createBtn)
     document.getElementById('container').appendChild(newMarquee);
     newMarquee.appendChild(nextButton);
     document.getElementById('container').appendChild(document.createElement('br'));
 };
+
+function direction() {
+    i++
+    if (i % 2 == 0) {
+        return 'left'
+    } else {
+        return 'right'
+    }
+}
