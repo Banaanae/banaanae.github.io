@@ -24,7 +24,8 @@ function createBtn() {
     var newMarquee = document.createElement('marquee');
     newMarquee.behavior = 'scroll';
     newMarquee.direction = direction();
-    nextButton.addEventListener('click', createBtn)
+    newMarquee.scrollAmount = i;
+    nextButton.addEventListener('click', createBtn);
     document.getElementById('container').appendChild(newMarquee);
     newMarquee.appendChild(nextButton);
     document.getElementById('container').appendChild(document.createElement('br'));
